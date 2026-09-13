@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Proposal Generator</title>
+
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+    <h1>AI Proposal Generator</h1>
+
+    <div class="app-container">
+
+        <div class="input-section">
+            <textarea placeholder="Paste your notes or transcript here..."></textarea>
+            <button id="recordButton" type="button">🎤 Record</button>
+            <button id="generateButton">Generate Proposal</button>
+        </div>
+
+        <div class="output-section">
+            <input type="file" accept="image/*">
+<img id="logoPreview" style="display: none; max-width: 150px;">
+            <button>Download</button>
+            <textarea></textarea>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
