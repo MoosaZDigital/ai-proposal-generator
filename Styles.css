@@ -74,3 +74,58 @@ body {
   #recordButton:hover {
     background-color: hsl(0, 70%, 45%);
   }
+
+  #proposalDocument h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: hsl(220, 20%, 20%);
+}
+
+@media print {
+  body {
+      background-color: white;
+  }
+
+  body > h1 {
+      display: none !important;
+  }
+
+  .input-section,
+  .output-section > input,
+  .output-section > button {
+      display: none !important;
+  }
+
+  .app-container {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  .output-section {
+      padding: 0;
+      background-color: white;
+  }
+
+  #proposalDocument {
+      display: block;
+  }
+
+  #proposalDocument textarea {
+      display: block !important;
+      width: 100%;
+      min-height: 500px;
+      border: none;
+      resize: none;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 14px;
+  }
+
+  #logoPreview {
+      display: block !important;
+      max-width: 150px;
+      margin-bottom: 20px;
+  }
+}

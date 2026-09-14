@@ -34,12 +34,6 @@ logoInput.addEventListener("change", function () {
   }
 });
 
-logoInput.addEventListener("change", function () {
-  const file = logoInput.files[0];
-  if (file) {
-    console.log("Logo selected:", file.name);
-  }
-});
 
 const downloadButton = document.querySelector(".output-section button");
 
