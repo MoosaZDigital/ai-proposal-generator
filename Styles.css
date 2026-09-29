@@ -1,131 +1,130 @@
 body {
-    background-color: hsl(220, 20%, 97%);
-    font-family: Arial, sans-serif;
-    margin: 0;
+  background-color: hsl(220, 60%, 85%);
+  font-family: Inter,sans-serif
+  margin: 20px;
 }
 
 .app-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 24px;
-  }
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+}
 
-  .input-section {
-    background-color: white;
-    padding: 24px;
-    border-radius: 8px;
-    margin-bottom: 24px;
+.input-section {
+  background-color: hsl(220, 20%, 60%);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
 
-  }
+.output-section {
+  background-color: hsl(220, 20%, 60%);
+  padding: 24px;
+  border-radius: 12px;
+}
 
-  .output-section {
-    background-color: white;
-    padding: 24px;
-    border-radius: 8px;
-  }
+textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  font-family: inherit;
+}
 
-  textarea {
-    width: 100%;
-    min-height: 200px;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid hsl(220, 15%, 88%);
-    box-sizing: border-box;
-    font-family: inherit;
-  }
-  
-  button {
-    background-color: hsl(217, 91%, 55%);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    margin-top: 12px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: hsl(217, 91%, 45%);
-  }
+button {
+  background-color: hsl(217, 91%, 70%);
+  color: white;
+  border: 2px solid black;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-top: 12px;
+  cursor: pointer;
+}
 
-  h1 {
-    text-align: center;
-  }
+button:hover {
+  background-color: hsl(217, 91%, 45%);
+}
 
-  .output-section textarea {
-    min-height: 300px;
-  }
+h1 {
+  text-align: center;
+}
 
-  button {
-    background-color: hsl(217, 91%, 55%);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    margin-top: 12px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
+.output-section textarea {
+  min-height: 300px;
+}
 
-  #recordButton {
-    background-color: hsl(0, 70%, 55%);
-  }
-  
-  #recordButton:hover {
-    background-color: hsl(0, 70%, 45%);
-  }
+button {
+  background-color: hsl(217, 91%, 70%);
+  color: white;
+  border: 2px solid black;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-top: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
-  #proposalDocument h2 {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 28px;
-    color: hsl(220, 20%, 20%);
+#recordButton {
+  background-color: hsl(37, 70%, 55%);
+}
+
+#recordButton:hover {
+  background-color: hsl(0, 70%, 45%);
+}
+
+#proposalDocument h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: hsl(220, 20%, 20%);
 }
 
 @media print {
   body {
-      background-color: white;
+    background-color: white;
   }
 
   body > h1 {
-      display: none !important;
+    display: none !important;
   }
 
   .input-section,
   .output-section > input,
   .output-section > button {
-      display: none !important;
+    display: none !important;
   }
 
   .app-container {
-      max-width: none;
-      margin: 0;
-      padding: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
   }
 
   .output-section {
-      padding: 0;
-      background-color: white;
+    padding: 0;
+    background-color: white;
   }
 
   #proposalDocument {
-      display: block;
+    display: block;
   }
 
   #proposalDocument textarea {
-      display: block !important;
-      width: 100%;
-      min-height: 500px;
-      border: none;
-      resize: none;
-      box-sizing: border-box;
-      font-family: inherit;
-      font-size: 14px;
+    display: block !important;
+    width: 100%;
+    min-height: 500px;
+    border: none;
+    resize: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
   }
 
   #logoPreview {
-      display: block !important;
-      max-width: 150px;
-      margin-bottom: 20px;
+    display: block !important;
+    max-width: 150px;
+    margin-bottom: 20px;
   }
 }
