@@ -3,6 +3,12 @@ require("dotenv").config();
 
 const apiKey = process.env.ANTHROPIC_API_KEY;
 
+// Stop straight away with a clear message instead of failing on the first request
+if (!apiKey) {
+    console.error("ANTHROPIC_API_KEY is missing. Add it to your .env file (or your host's environment variables).");
+    process.exit(1);
+}
+
 const Anthropic = require("@anthropic-ai/sdk");
 
 const anthropic = new Anthropic({
@@ -11,25 +17,42 @@ const anthropic = new Anthropic({
 
 
 const express = require("express");
-const cors = require("cors");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 
 const app = express();
 
-app.use(cors());
+// Hosts like Render sit behind a proxy - this lets the rate limiter see each visitor's real IP
+app.set("trust proxy", 1);
 
-app.use(express.json());
+// Security headers (blocks clickjacking, restricts where scripts can load from, etc.)
+app.use(helmet());
 
-const PORT = 3000;
+// Small body limit - proposal notes never need more than this
+app.use(express.json({ limit: "10kb" }));
 
-app.get("/", (req, res) => {
-    res.send("Proposal Generator backend is running.");
+// Serve only the frontend folder, so server.js and .env can never be downloaded
+app.use(express.static("public"));
+
+const PORT = process.env.PORT || 3000;
+const MAX_NOTES_LENGTH = 5000;
+
+// Each proposal costs API credit, so cap how many one visitor can generate
+const generateLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000,
+    limit: 10,
+    message: { message: "You've reached the limit of 10 proposals per hour. Please try again later." }
 });
 
-app.post("/generate", async (req, res) => {
+app.post("/generate", generateLimiter, async (req, res) => {
     const userNotes = req.body.notes;
 
-    if (!userNotes || userNotes.trim() === "") {
+    if (typeof userNotes !== "string" || userNotes.trim() === "") {
         return res.status(400).json({ message: "Please enter some client notes before generating a proposal." });
+    }
+
+    if (userNotes.length > MAX_NOTES_LENGTH) {
+        return res.status(400).json({ message: `Notes are too long. Please keep them under ${MAX_NOTES_LENGTH} characters.` });
     }
 
     try {

@@ -4,7 +4,7 @@ const outputTextarea = document.querySelector(".output-section textarea");
 generateButton.addEventListener("click", async function () {
     const userNotes = inputTextarea.value;
 
-    const response = await fetch("http://localhost:3000/generate", {
+    const response = await fetch("/generate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
