@@ -1,20 +1,20 @@
-
 require("dotenv").config();
 
 const apiKey = process.env.ANTHROPIC_API_KEY;
 
 // Stop straight away with a clear message instead of failing on the first request
 if (!apiKey) {
-    console.error("ANTHROPIC_API_KEY is missing. Add it to your .env file (or your host's environment variables).");
-    process.exit(1);
+  console.error(
+    "ANTHROPIC_API_KEY is missing. Add it to your .env file (or your host's environment variables).",
+  );
+  process.exit(1);
 }
 
 const Anthropic = require("@anthropic-ai/sdk");
 
 const anthropic = new Anthropic({
-    apiKey: apiKey
+  apiKey: apiKey,
 });
-
 
 const express = require("express");
 const helmet = require("helmet");
@@ -39,30 +39,43 @@ const MAX_NOTES_LENGTH = 5000;
 
 // Each proposal costs API credit, so cap how many one visitor can generate
 const generateLimiter = rateLimit({
-    windowMs: 60 * 60 * 1000,
-    limit: 10,
-    message: { message: "You've reached the limit of 10 proposals per hour. Please try again later." }
+  windowMs: 60 * 60 * 1000,
+  limit: 10,
+  message: {
+    message:
+      "You've reached the limit of 10 proposals per hour. Please try again later.",
+  },
 });
 
 app.post("/generate", generateLimiter, async (req, res) => {
-    const userNotes = req.body.notes;
+  const userNotes = req.body.notes;
 
-    if (typeof userNotes !== "string" || userNotes.trim() === "") {
-        return res.status(400).json({ message: "Please enter some client notes before generating a proposal." });
-    }
+  if (typeof userNotes !== "string" || userNotes.trim() === "") {
+    return res
+      .status(400)
+      .json({
+        message: "Please enter some client notes before generating a proposal.",
+      });
+  }
 
-    if (userNotes.length > MAX_NOTES_LENGTH) {
-        return res.status(400).json({ message: `Notes are too long. Please keep them under ${MAX_NOTES_LENGTH} characters.` });
-    }
+  if (userNotes.length > MAX_NOTES_LENGTH) {
+    return res
+      .status(400)
+      .json({
+        message: `Notes are too long. Please keep them under ${MAX_NOTES_LENGTH} characters.`,
+      });
+  }
 
-    try {
+  try {
     const message = await anthropic.messages.create({
-        model: "claude-haiku-4-5-20251001",
-        max_tokens: 1000,
-        messages: [
-            {
-                role: "user",
-                content: `You are a professional proposal writer. Based on the following client notes, write a complete, professional business proposal.
+      model: "claude-haiku-5-5",
+      max_tokens: 16000,
+      output_config: { effort: "low" },
+
+      messages: [
+        {
+          role: "user",
+          content: `You are a professional proposal writer. Based on the following client notes, write a complete, professional business proposal.
 
 Structure the proposal with these clearly labeled sections, in plain text (no markdown symbols like # or **):
 
@@ -76,22 +89,28 @@ NEXT STEPS
 Use clear paragraph breaks between sections. Base all content strictly on the information provided in the notes below — do not invent specific details that weren't mentioned.
 
 CLIENT NOTES:
-${userNotes}`
-            }
-        ]
+${userNotes}`,
+        },
+      ],
     });
+
+    // The reply can contain several pieces (e.g. thinking, then text) - find the text piece
+    const textBlock = message.content.find((block) => block.type === "text");
 
     res.json({
-        message: message.content[0].text
+      message: textBlock.text,
     });
-
   } catch (error) {
     console.error("Error calling Claude API:", error);
-    res.status(500).json({ message: "Something went wrong while generating the proposal. Please try again." });
+    res
+      .status(500)
+      .json({
+        message:
+          "Something went wrong while generating the proposal. Please try again.",
+      });
   }
-
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

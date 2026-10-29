@@ -11,6 +11,8 @@ const anthropic = new Anthropic({ apiKey: apiKey });
 
 You *could* call the Claude API with `fetch()`, but the official **SDK** (Software Development Kit) handles the details: the right address, headers, authentication and error types. You create one client with your key and reuse it for every request.
 
+> **Update:** this lesson shows the original call (Haiku 4.5, `max_tokens: 1000`, `content[0].text`). The project now uses Haiku 5.5 with low effort. Day 10 explains what changed and why. The ideas below all still apply.
+
 ## The request
 
 ```js

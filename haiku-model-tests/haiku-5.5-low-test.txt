@@ -1,0 +1,69 @@
+OVERVIEW
+
+This proposal is prepared for Sarah Mitchell, owner of Mitchell's Pet Grooming in Leeds. The business has been running for six years with two groomers and Sarah, and has built a strong reputation, with around 80 Google reviews and a 4.9-star rating. At present, bookings are taken only by phone and Facebook message. Calls are often missed while the team is grooming, and this is causing customers to be lost. The current website is an older site that looks outdated and does not work well on mobile devices.
+
+The aim of this project is to replace the existing website with a modern, friendly, mobile-friendly site in the business's teal and orange brand colours. The new site will allow customers to book appointments online at any time, showcase the services and prices clearly, display the business's work and customer reviews, and make it easy for Sarah to keep content up to date herself. Together, these changes should reduce missed bookings and make it easier for new customers to find and choose Mitchell's Pet Grooming.
+
+SCOPE OF WORK
+
+The project includes the following deliverables.
+
+Website design and build: A modern, friendly, responsive website designed to work well on phones, tablets and desktop computers. The colour scheme will match the existing logo, using teal and orange.
+
+Online booking system: Customers will be able to choose a service, select their dog's size, and pick a date and time. The system will show available slots and block out times when the groomers are fully booked, so that double bookings are avoided.
+
+Services and pricing page: A clear page listing all services and prices, currently including a small dog full groom at £35, a medium dog full groom at £45, a large dog full groom at £60, a nail trim at £10, and a puppy intro session at £20.
+
+Before and after gallery: A gallery page displaying before and after photographs. Sarah will be able to add new photographs herself without technical help.
+
+Reviews section: A section displaying customer reviews and the current 4.9-star Google rating, to build trust with prospective customers.
+
+Contact form and map: A contact form for general enquiries and a map showing the business location in Leeds.
+
+Appointment reminders: The client would like reminder messages sent by text or email the day before each appointment. We will confirm how this can be delivered with the chosen booking platform before committing to a specific approach. This feature is included as an optional extension, described in the Pricing section.
+
+Ease of use: The site will be built so that Sarah can update text, prices, photographs and other content through a simple interface, with a short walkthrough provided at handover.
+
+Out of scope: An online shop for dog shampoo and other products is not included in this proposal. Sarah has mentioned this may be wanted in future, and it can be quoted separately at a later date.
+
+TIMELINE
+
+The website must be live before the Christmas rush, with a target completion date of the end of November. The project will be delivered in the following stages, working back from that date.
+
+Stage one: Confirmation of the project start date, collection of logo files, brand colours, service details, prices, photographs and review access. Initial confirmation of the booking and reminder approach.
+
+Stage two: Design of the site layout and visual style for Sarah's approval, including the mobile version of each page.
+
+Stage three: Build of all pages, booking system setup, and entry of services, prices, gallery images and reviews.
+
+Stage four: Testing of the booking system, including checking that fully booked times are blocked correctly, that the site works on mobile devices, and that the contact form and map function properly.
+
+Stage five: Client review, final corrections, and handover with a short training session for Sarah on updating the site.
+
+Stage six: Go-live by the end of November, with booking details shared with customers.
+
+The exact dates for each stage will be agreed once the project start date is confirmed. Timely feedback from Sarah at the design and testing stages will be important for keeping the project on schedule.
+
+PRICING
+
+The core website project, covering all items listed in the Scope of Work apart from the appointment reminders, is quoted at a fixed fee of £2,500. This is in line with the client's stated budget.
+
+The appointment reminder feature is an optional extension. Sarah indicated that the budget could stretch slightly for this feature. The cost will be confirmed once the booking platform and reminder delivery method (text or email) have been checked, and it will be presented as a separate line item so that Sarah can decide whether to proceed.
+
+Any ongoing costs for third-party services, such as booking software or messaging credits, if required, will be confirmed in writing before work begins and are not included in the figures above.
+
+TERMS
+
+A deposit is payable to secure the project start date, with the balance due on handover and approval of the completed website. The exact deposit amount and payment schedule will be confirmed in the final agreement.
+
+The client will provide the logo files, brand colour details, service descriptions, prices, photographs, and access to the Google reviews in a timely manner. Delays in providing these materials may affect the go-live date.
+
+Changes requested after the design has been approved may be subject to additional charges and may affect the timeline. Any such changes will be discussed and agreed in writing before work is carried out.
+
+Once the site is live, the client will be responsible for the ongoing renewal of the domain name and hosting, unless otherwise agreed. Details will be provided at handover.
+
+NEXT STEPS
+
+To proceed, please confirm your acceptance of this proposal and the proposed budget. Once accepted, we will arrange a short call to confirm the reminder feature requirements and agree on a start date that allows the project to go live by the end of November.
+
+After this, we will request the materials listed in the Terms section and begin the design stage. We look forward to helping Mitchell's Pet Grooming take bookings more easily and reach more local customers this Christmas.

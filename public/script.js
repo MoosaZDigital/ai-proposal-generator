@@ -4,20 +4,40 @@ const outputTextarea = document.querySelector(".output-section textarea");
 generateButton.addEventListener("click", async function () {
     const userNotes = inputTextarea.value;
 
-    const response = await fetch("/generate", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            notes: userNotes
-        })
-    });
+    // 1. Show the user something is happening, and block extra clicks
+    generateButton.disabled = true;
+    generateButton.textContent = "Generating...";
 
-    const data = await response.json();
+    try {
+        const response = await fetch("/generate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                notes: userNotes
+            })
+        });
 
-    outputTextarea.value = data.message;
+        const data = await response.json();
+
+        // 2. The server answered, but with an error (empty notes, too long, rate limit)
+        if (!response.ok) {
+            alert(data.message);
+            return;
+        }
+
+        outputTextarea.value = data.message;
+    } catch (error) {
+        // 3. The server couldn't be reached at all
+        alert("Couldn't reach the server. Please check your connection and try again.");
+    } finally {
+        // 4. Always put the button back to normal, whatever happened
+        generateButton.disabled = false;
+        generateButton.textContent = "Generate Proposal";
+    }
 });
+
 
 const logoInput = document.querySelector('input[type="file"]');
 const logoPreview = document.querySelector("#logoPreview");

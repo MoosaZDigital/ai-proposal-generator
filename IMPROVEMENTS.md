@@ -20,7 +20,40 @@ A log of the changes made to the AI Proposal Generator after the original 7-day 
 
 **Also checked:** the git history was scanned to confirm the API key was never committed.
 
-## 2. Bug fixes
+## 2. Model upgrade, chosen by testing
+
+I compared the original model (Claude Haiku 4.5) with the newer Claude Haiku 5.5 by generating a proposal from the same realistic client notes on each. Some details were left out of the notes on purpose (payment terms, hosting, a feature the client wasn't sure about) to see whether each model would invent them.
+
+| | Haiku 4.5 | Haiku 5.5 (medium effort) | Haiku 5.5 (low effort) |
+|---|---|---|---|
+| Time | a few seconds | 25–30 s | ~17 s |
+| Prices and budget correct | Yes | Yes | Yes |
+| Invented details | **Yes**: a 50/50 deposit, 12 months of free hosting then £300/year, reminder costs "under £20 monthly" | None | None (only generic wording such as "a deposit is payable", with no amounts) |
+| Uncertain feature (reminders) | Promised as included | Optional add-on, cost to be confirmed | Optional add-on, cost to be confirmed |
+| "Maybe later" feature (online shop) | Not mentioned | Listed as out of scope | Listed as out of scope |
+| Approx. cost per proposal | ~$0.008 | ~$0.001–0.002 | ~$0.001 |
+
+**Decision: Haiku 5.5 with `effort: "low"`.** The older model ignored the "do not invent details" instruction and committed the business to things the client never discussed, which is the most damaging mistake a proposal tool can make. Haiku 5.5 stayed accurate, cost less, and low effort cut the wait by about 40% without losing accuracy.
+
+Code changes this required in `server.js`:
+- `model: "claude-haiku-5-5"` and `output_config: { effort: "low" }`.
+- `max_tokens` raised from 1000 to 16000. Newer models think before writing, and thinking counts toward the limit, so 1000 would cut proposals off. You only pay for tokens actually used, so the higher ceiling costs nothing extra.
+- The reply is now read with `message.content.find(block => block.type === "text")` instead of `message.content[0].text`, because the first piece of the reply may be a thinking block rather than the proposal.
+
+## 3. Better feedback on the Generate button
+
+`public/script.js` previously assumed every request succeeded.
+
+| Change | Why it matters |
+|---|---|
+| The button shows "Generating..." and is disabled while waiting | A proposal takes ~17 seconds. Without feedback the app looks broken, and repeat clicks would each cost money. |
+| Server errors (empty notes, too long, rate limit) show in a pop-up | Previously the error text replaced the proposal box, wiping out a proposal the user may have been editing. |
+| "Couldn't reach the server" message via `try...catch` | Previously a network failure crashed the click handler silently. |
+| The button is reset in `finally` | `finally` runs whether the request succeeded, failed or returned early, so the button can never get stuck. |
+
+**Tested:** empty notes, a real proposal (including clicking again while generating) and the server switched off.
+
+## 4. Bug fixes
 
 | Change | Why it matters |
 |---|---|

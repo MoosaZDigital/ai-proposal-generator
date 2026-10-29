@@ -27,6 +27,9 @@ Practise until it feels natural. Something like:
 9. How did you get consistent, structured output from the AI? *(Day 6)*
 10. How do you stop the AI making things up? *(Day 6)*
 
+10b. How did you choose which model to use? *(Day 10)*
+10c. What happens in your UI while the proposal is generating, or if something fails? *(Day 10)*
+
 ## Security
 
 11. How do you keep your API key secret? *(Day 7)*

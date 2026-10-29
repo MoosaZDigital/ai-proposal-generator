@@ -53,9 +53,9 @@ const data = await response.json();   // read the response body and turn the JSO
 outputTextarea.value = data.message;  // put the proposal in the output box
 ```
 
-## A weakness you'll fix later
+## Update: this has since been improved
 
-This code assumes everything works. If the server is down, `fetch` throws an error and nothing tells the user. There's also no "Generating..." message, so users may click several times. Fixing this is one of the next improvements, and you'll write it.
+The code above is the original version. It assumed everything worked: if the server was down, nothing told the user, and there was no "Generating..." message. The button now handles every outcome with `try`/`catch`/`finally`. See Day 10, and compare it with what's in `public/script.js` now.
 
 ## Try it
 

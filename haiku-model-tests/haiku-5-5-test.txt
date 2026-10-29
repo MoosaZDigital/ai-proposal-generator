@@ -1,0 +1,57 @@
+OVERVIEW
+
+This proposal is prepared for Sarah Mitchell, owner of Mitchell's Pet Grooming in Leeds. The business has been operating for six years with two groomers and Sarah, and has built a strong reputation, with around 80 Google reviews and a 4.9-star rating. At present, bookings are taken only by phone and Facebook message. Sarah is missing calls while she is grooming, and this is causing the business to lose customers. The current website, an older Wix site, looks outdated and does not work well on mobile devices.
+
+The goal of this project is to give Mitchell's Pet Grooming a modern, friendly website in the teal and orange of its existing logo, with online booking that lets customers choose a service, dog size, date and time, and that automatically blocks out times when the groomers are fully booked. The site will also showcase the business's services and prices, a before and after gallery, its Google reviews, and a contact form and map. The project will be delivered with a content management approach that allows Sarah, who is not technical, to make updates herself with ease. Automated appointment reminders the day before a booking are also requested and will be explored as part of this work.
+
+SCOPE OF WORK
+
+The website will be designed to match the teal and orange colours of the Mitchell's Pet Grooming logo, with a modern and friendly look that works well on both desktop and mobile devices. It will replace the existing Wix site.
+
+Online booking will allow customers to select a service, their dog's size, and a preferred date and time. Availability will reflect the groomers' schedules, so that times are automatically blocked out when they are fully booked. This directly addresses the missed calls and lost customers the business is currently experiencing.
+
+The services page will list the current prices as provided by Sarah: small dog full groom £35, medium dog full groom £45, large dog full groom £60, nail trim £10, and puppy intro session £20.
+
+A gallery page will display before and after photos of groomed dogs. Sarah will be able to add new photos herself after handover.
+
+A reviews section will showcase the business's Google reviews, reflecting the 4.9-star rating and roughly 80 reviews.
+
+A contact page will include a contact form and a map showing the salon's location in Leeds.
+
+Automated reminder messages, by text or email, will be sent the day before each appointment. Sarah has asked whether this is possible, and it will be confirmed as part of the initial build. Where it is feasible, it will be included as an add-on to the core website.
+
+Sarah's website will be built so that she can edit text, prices, photos and reviews without technical knowledge. A brief walkthrough will be provided at handover.
+
+Out of scope for this proposal: an online shop for dog shampoo. Sarah has mentioned this may be wanted in future, and it can be scoped separately once the booking site is live.
+
+TIMELINE
+
+The project is planned to be completed and live before the Christmas rush, with a target of the end of November. The work will progress through the following stages: confirmation of the booking requirements and reminder feasibility; design of the website in the teal and orange brand colours, shared with Sarah for feedback; build of the website, services, gallery, reviews and contact pages; set-up of the online booking system and availability rules for the two groomers and Sarah; testing of bookings, reminders and mobile layout; training session for Sarah on updating content; and launch of the new site.
+
+The exact start date will be confirmed on acceptance of this proposal. Working backwards from the end of November target, Sarah's timely feedback at each review stage will be important to keep the launch on schedule.
+
+PRICING
+
+The core website project, covering the design, build, services page, gallery, reviews, contact form and map, and online booking system, is within the budget of approximately £2,500 discussed on the call.
+
+Automated day-before reminders by text or email are an optional add-on. Sarah indicated the budget could stretch for this feature. The cost of this add-on will be confirmed once the reminder options have been assessed, and it will be presented as a separate line item so that it can be approved or declined independently of the core project.
+
+The shampoo online shop is not included in this proposal and would be quoted separately if and when Sarah decides to proceed.
+
+Ongoing costs such as domain registration or any third-party booking or messaging service subscriptions will be disclosed clearly before work begins.
+
+TERMS
+
+Payment terms, including any deposit and the schedule of milestone payments, will be agreed in writing before work starts. The final amount will be confirmed on acceptance of this proposal.
+
+Sarah will provide the logo files, current service and price information, before and after photos, and access to the Google reviews, along with the Facebook and phone details for the business as needed. Timely feedback at each stage will be required to meet the end of November target.
+
+Changes requested after design approval may affect the timeline and the price, and will be discussed and agreed in advance.
+
+Ownership of the website content provided by the client remains with Mitchell's Pet Grooming. Final terms and conditions will be set out in the formal agreement issued on acceptance.
+
+NEXT STEPS
+
+To proceed, please confirm acceptance of this proposal and indicate whether you would like to include the automated reminder add-on, subject to confirmation of its price. Once accepted, the project will be scheduled, a design brief will be prepared using the teal and orange brand colours, and the first content and photo request will be sent.
+
+Please get in touch with any questions or to arrange a follow-up call. We look forward to helping Mitchell's Pet Grooming take bookings online and get the new site live well ahead of the Christmas rush.
