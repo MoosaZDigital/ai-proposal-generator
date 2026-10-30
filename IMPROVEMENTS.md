@@ -71,7 +71,24 @@ With Haiku 5.5 at low effort, this caps spending at about $0.05 a day, so a $5 b
 
 Firefox doesn't support the Speech Recognition API, so `new SpeechRecognition()` threw an error and left a Record button that did nothing. The code now uses **feature detection**: it checks whether the API exists first, and hides the Record button if it doesn't. **Tested** by temporarily setting `SpeechRecognition` to `undefined`: the button was hidden and there was no console error.
 
-## 6. Bug fixes
+## 6. Drafts survive a refresh
+
+Refreshing or closing the tab used to wipe the notes and the proposal, including a proposal the user had spent time editing. Both are now saved in the browser's `localStorage` and restored when the page loads.
+
+| Detail | Why |
+|---|---|
+| Saved on every `input` event | Every keystroke, paste or deletion is saved immediately. |
+| Also saved on `pagehide` | Code that sets `.value` (a newly generated proposal, voice transcription) doesn't fire `input`, so the page also saves when the user refreshes, closes or leaves. |
+| Wrapped in `try...catch` | Some browsers block storage (e.g. certain private-browsing modes). The app keeps working there, just without drafts. |
+| Stays in the user's browser | Drafts are never sent to the server, which keeps it stateless and keeps clients' details private. |
+
+The logo is not saved: images are much larger than text and `localStorage` only holds a few megabytes.
+
+## 7. Removed unused Tailwind CSS
+
+Tailwind was installed but never connected to the page. Adopting it would mean restyling every element, adding a build step and rewriting the print styles, which is a big change for no new features right before deployment. It was removed to keep the project simple; a Tailwind redesign is a possible future version on its own branch.
+
+## 8. Bug fixes
 
 | Change | Why it matters |
 |---|---|

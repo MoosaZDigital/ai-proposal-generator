@@ -1,6 +1,28 @@
 const inputTextarea = document.querySelector(".input-section textarea");
 const generateButton = document.querySelector("#generateButton");
 const outputTextarea = document.querySelector(".output-section textarea");
+
+// Save the notes and proposal in this browser, so a refresh doesn't lose them
+function saveDraft() {
+  try {
+    localStorage.setItem("draftNotes", inputTextarea.value);
+    localStorage.setItem("draftProposal", outputTextarea.value);
+  } catch (error) {
+    // Storage can be blocked (e.g. some private browsing modes) - the app still works without it
+  }
+}
+
+// Put back anything saved from last time
+try {
+  inputTextarea.value = localStorage.getItem("draftNotes") || "";
+  outputTextarea.value = localStorage.getItem("draftProposal") || "";
+} catch (error) {}
+
+// Save whenever the user types, and when they leave or refresh the page
+inputTextarea.addEventListener("input", saveDraft);
+outputTextarea.addEventListener("input", saveDraft);
+window.addEventListener("pagehide", saveDraft);
+
 generateButton.addEventListener("click", async function () {
     const userNotes = inputTextarea.value;
 
