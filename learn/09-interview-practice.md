@@ -36,6 +36,9 @@ Practise until it feels natural. Something like:
 12. What would you do if you accidentally pushed a key to GitHub? *(Day 7)*
 13. What stops someone running up your API bill? *(Day 8)*
 14. What is CORS, and why did you remove it? *(Day 8)*
+14b. How do you control the cost of an app that calls a paid API? *(Days 8 and 11)*
+14c. What happens to your rate limits when the server restarts, and what would you do at scale? *(Day 11)*
+14d. How does your app behave in a browser that doesn't support voice input? *(Day 11)*
 
 ## Reflection
 

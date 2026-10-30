@@ -53,7 +53,25 @@ Code changes this required in `server.js`:
 
 **Tested:** empty notes, a real proposal (including clicking again while generating) and the server switched off.
 
-## 4. Bug fixes
+## 4. Site-wide daily cap
+
+The per-visitor limit (10 per hour) doesn't stop many visitors together, or one person switching IP addresses, from using up the whole API balance. A second limiter is now shared by **all** visitors: 50 successful proposals per 24 hours.
+
+| Detail | Why |
+|---|---|
+| `keyGenerator: () => "everyone"` | Rate limiters normally keep one count per IP. Giving every request the same key makes them share a single count. |
+| `skipFailedRequests: true` | Only successful proposals (the ones that cost money) count. Otherwise someone could spam empty requests to block real visitors for the day at no cost to themselves. |
+| Runs after the per-visitor limiter | A visitor over their personal limit is stopped first and never uses up the shared allowance. |
+
+With Haiku 5.5 at low effort, this caps spending at about $0.05 a day, so a $5 balance lasts more than three months even under deliberate abuse.
+
+**Tested:** temporarily set to 2. The first two proposals worked, the third showed the daily-limit message, and requests with empty notes didn't count.
+
+## 5. Voice input no longer breaks in unsupported browsers
+
+Firefox doesn't support the Speech Recognition API, so `new SpeechRecognition()` threw an error and left a Record button that did nothing. The code now uses **feature detection**: it checks whether the API exists first, and hides the Record button if it doesn't. **Tested** by temporarily setting `SpeechRecognition` to `undefined`: the button was hidden and there was no console error.
+
+## 6. Bug fixes
 
 | Change | Why it matters |
 |---|---|

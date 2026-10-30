@@ -49,13 +49,13 @@ recognition.interimResults = false;  // only give us final words, not half-guess
 - The **`result`** event delivers everything heard so far; the loop joins each piece into one transcript and puts it in the notes box.
 - The **`end`** event resets the button text.
 
-## A bug you'll fix
+## Update: a bug that has since been fixed
 
-Firefox has **neither** name, so `SpeechRecognition` is `undefined`, and `new SpeechRecognition()` throws an error. The fix is to check whether it exists first and hide the Record button if it doesn't. This idea is called **feature detection**, and it's one of the next improvements.
+Firefox has **neither** name, so `SpeechRecognition` was `undefined` and `new SpeechRecognition()` threw an error. The code now checks first and hides the Record button if voice input isn't supported. This is called **feature detection**; see Day 11.
 
 ## Try it
 
-Open http://localhost:3000 in Firefox or Edge and look at the DevTools Console after the page loads. Do you see the error?
+Pick a logo, then look in DevTools → Network. Is there a request sending the image to the server? (There shouldn't be.)
 
 ## Check yourself
 

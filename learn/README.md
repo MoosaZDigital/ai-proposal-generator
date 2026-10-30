@@ -23,6 +23,7 @@ A guide to the AI Proposal Generator, split into short lessons. Read one a day (
 | 8 | [Getting ready to go live](08-security-hardening.md) | `server.js` |
 | 9 | [Interview practice](09-interview-practice.md) | — |
 | 10 | [Choosing a model, and waiting well](10-choosing-a-model.md) | `server.js`, `public/script.js` |
+| 11 | [A daily cap, and feature detection](11-daily-cap-and-feature-detection.md) | `server.js`, `public/script.js` |
 
 New lessons get added as we improve the project. `IMPROVEMENTS.md` (in the project root) is the short list for your mentor; these lessons are the long version for you.
 

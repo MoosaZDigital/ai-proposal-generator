@@ -64,23 +64,30 @@ downloadButton.addEventListener("click", function () {
 const recordButton = document.querySelector("#recordButton");
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
-recognition.continuous = true;
-recognition.interimResults = false;
 
-recordButton.addEventListener("click", function () {
-  recognition.start();
-  recordButton.textContent = "🎙️ Listening...";
-});
+// Some browsers (e.g. Firefox) don't support voice input - hide the button there instead of crashing
+if (!SpeechRecognition) {
+  recordButton.style.display = "none";
+} else {
+  const recognition = new SpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = false;
 
-recognition.addEventListener("result", function (event) {
-  let transcript = "";
-  for (let i = 0; i < event.results.length; i++) {
-    transcript += event.results[i][0].transcript + " ";
-  }
-  inputTextarea.value = transcript;
-});
+  recordButton.addEventListener("click", function () {
+    recognition.start();
+    recordButton.textContent = "🎙️ Listening...";
+  });
 
-recognition.addEventListener("end", function () {
-  recordButton.textContent = "🎤 Record";
-});
+  recognition.addEventListener("result", function (event) {
+    let transcript = "";
+    for (let i = 0; i < event.results.length; i++) {
+      transcript += event.results[i][0].transcript + " ";
+    }
+    inputTextarea.value = transcript;
+  });
+
+  recognition.addEventListener("end", function () {
+    recordButton.textContent = "🎤 Record";
+  });
+}
+

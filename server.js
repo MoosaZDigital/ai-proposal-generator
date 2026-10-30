@@ -47,7 +47,20 @@ const generateLimiter = rateLimit({
   },
 });
 
-app.post("/generate", generateLimiter, async (req, res) => {
+// A second limit shared by ALL visitors, so the total daily cost has a ceiling
+const dailyLimiter = rateLimit({
+  windowMs: 24 * 60 * 60 * 1000,
+  limit: 50,
+  keyGenerator: () => "everyone",
+  skipFailedRequests: true,
+  message: {
+    message: "The demo has reached its daily limit. Please try again tomorrow.",
+  },
+});
+
+
+app.post("/generate", generateLimiter, dailyLimiter, async (req, res) => {
+
   const userNotes = req.body.notes;
 
   if (typeof userNotes !== "string" || userNotes.trim() === "") {
