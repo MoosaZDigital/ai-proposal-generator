@@ -2,6 +2,17 @@
 
 A log of the changes made to the AI Proposal Generator after the original 7-day build.
 
+## Summary
+
+After the challenge, I kept working on the app to get it ready for real people to use, and it's now live: https://ai-proposal-generator-0rue.onrender.com
+
+- **Made it safe to put online:** limits on how often it can be used, so nobody can misuse it or run up costs, and the API key is kept out of the code.
+- **Better proposals:** I tested the old AI model against a newer one. The old one made up details the client never mentioned, so I switched to the newer one.
+- **Easier to use:** the button now shows when it's working, errors are explained clearly, your work isn't lost if you refresh the page, and voice input no longer breaks in Firefox.
+- **Live on the internet:** hosted on Render, and it updates automatically whenever I push changes to GitHub.
+
+Each section below explains what I changed and why.
+
 ## 1. Security hardening (preparing for a live deployment)
 
 | Change | Why it matters |
@@ -63,7 +74,7 @@ The per-visitor limit (10 per hour) doesn't stop many visitors together, or one 
 | `skipFailedRequests: true` | Only successful proposals (the ones that cost money) count. Otherwise someone could spam empty requests to block real visitors for the day at no cost to themselves. |
 | Runs after the per-visitor limiter | A visitor over their personal limit is stopped first and never uses up the shared allowance. |
 
-With Haiku 5.5 at low effort, this caps spending at about $0.05 a day, so a $5 balance lasts more than three months even under deliberate abuse.
+This puts a firm ceiling on daily spending, even if someone deliberately tries to abuse the site.
 
 **Tested:** temporarily set to 2. The first two proposals worked, the third showed the daily-limit message, and requests with empty notes didn't count.
 
@@ -93,3 +104,12 @@ Tailwind was installed but never connected to the page. Adopting it would mean r
 | Change | Why it matters |
 |---|---|
 | Added a missing `;` after `font-family` in the `body` rule (`public/Styles.css`) | Without it, the browser read `font-family` and the `margin` on the next line as one invalid declaration and silently dropped both. The page had been running without its body font setting and margin. CSS gives no error for this, so it's easy to miss; DevTools' Styles panel shows invalid declarations struck through. |
+
+## 9. Putting it live
+
+This was my first time deploying an app, so I took it step by step.
+
+- I used Render's free plan. It connects to my GitHub, so every time I push a change, the live site updates by itself.
+- I made a separate API key just for the live site, so it's not the same one I use on my laptop. It's saved only in Render's settings, never in my code.
+- Once it was live, I checked that private files like `server.js` and `.env` can't be opened from the browser, and that the security protections were working.
+- One thing I learned: the free plan goes to sleep when nobody is using it, so the first visit can take about a minute to load. After that it's quick.
