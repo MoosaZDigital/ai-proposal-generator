@@ -1,0 +1,49 @@
+PROPOSAL FOR MITCHELL'S PET GROOMING WEBSITE AND ONLINE BOOKING SYSTEM
+
+OVERVIEW
+
+This proposal outlines the development of a modern, user-friendly website for Mitchell's Pet Grooming. The new site will replace your current Wix platform with a custom-built solution designed specifically for pet grooming businesses. The primary objective is to streamline your booking process, reduce missed calls and customer inquiries, and present your business professionally online. The website will feature your teal and orange branding, showcase your services and pricing, display customer reviews, and include an integrated online booking system with automated appointment reminders.
+
+SCOPE OF WORK
+
+Website Design and Development
+We will create a new website with a modern, friendly aesthetic that reflects your brand identity using your teal and orange logo colours. The site will be fully mobile responsive, ensuring customers can easily browse and book appointments from any device. The design will prioritize simplicity and ease of navigation, recognizing that you will be managing content updates yourself.
+
+Online Booking System
+An integrated booking system will allow customers to select their preferred service, indicate dog size, and choose available dates and times. The system will automatically block out time slots when your groomers reach capacity, preventing double-bookings and ensuring accurate scheduling. This eliminates the need to manage bookings via phone and Facebook messages while you are grooming.
+
+Services and Pricing Page
+The website will feature a clear services page listing all offerings with pricing: small dog full groom (£35), medium dog full groom (£45), large dog full groom (£60), nail trim (£10), and puppy introduction session (£20).
+
+Photo Gallery
+A before-and-after photo gallery will showcase your grooming work. The gallery will be built with an easy-to-update interface so you can add new photos yourself without technical knowledge or assistance.
+
+Reviews Section
+Your Google reviews (approximately 80 reviews with a 4.9-star rating) will be integrated into the website to build trust and credibility with potential customers.
+
+Contact and Location
+The website will include a contact form for customer inquiries and an embedded map showing your Leeds location.
+
+Appointment Reminders
+We will implement an automated reminder system that sends customers either email or text message reminders the day before their scheduled appointments. This feature is included in the scope and will help reduce no-shows.
+
+Content Management System
+The website will use a user-friendly content management system that requires no technical expertise. We will provide clear guidance on how to update services, prices, photos, and manage the booking calendar.
+
+TIMELINE
+
+The project will be completed with a target launch date of the end of November, allowing the site to be live before the Christmas rush period. This timeline assumes prompt feedback and content provision from your team during the development process.
+
+PRICING
+
+The total project cost is £2,500. This includes website design and development, integration of the online booking system, appointment reminder functionality (email and text), photo gallery setup, reviews integration, contact form, and map. We will also provide basic training on how to manage the website and add new photos.
+
+TERMS
+
+A 50% deposit (£1,250) is required to begin work. The remaining 50% (£1,250) is due upon website launch. We will host the website and maintain the booking system for the first 12 months at no additional cost. After the first year, annual hosting and maintenance will be £300. You retain ownership of all content, photos, and data. The online reminder system operates on a per-message basis through our third-party provider; typical costs are minimal (under £20 monthly for a small business like yours, though this will depend on appointment volume).
+
+NEXT STEPS
+
+To move forward, please confirm your approval of this proposal and arrange payment of the initial 50% deposit. Once received, we will schedule a detailed kickoff meeting to discuss your specific design preferences, branding guidelines, and collect necessary content (service descriptions, photos, contact information). We will provide you with regular updates and opportunities to review work in progress. We will also schedule a training session before launch to ensure you are comfortable managing the website independently.
+
+Please let us know if you have any questions about this proposal or would like to discuss any aspects further.
