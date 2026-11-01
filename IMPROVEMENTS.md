@@ -107,7 +107,7 @@ Tailwind was installed but never connected to the page. Adopting it would mean r
 
 ## 9. Putting it live
 
-This was my first time deploying an app, so I took it step by step.
+This was my first time deploying an app with its own server (my henna landing page is a static site on GitHub Pages), so I took it step by step.
 
 - I used Render's free plan. It connects to my GitHub, so every time I push a change, the live site updates by itself.
 - I made a separate API key just for the live site, so it's not the same one I use on my laptop. It's saved only in Render's settings, never in my code.
