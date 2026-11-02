@@ -1,6 +1,6 @@
 # Improvements Since Challenge Submission
 
-A log of the changes made to the AI Proposal Generator after the original 7-day build.
+A log of the changes made to the AI Proposal Generator after the original two-week challenge.
 
 ## Summary
 

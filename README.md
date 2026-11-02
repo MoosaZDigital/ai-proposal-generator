@@ -4,6 +4,14 @@ An AI-powered proposal generator built as part of my software development bootca
 
 The goal of this project was to create a complete workflow that takes client information and uses AI to turn it into a professional project proposal.
 
+## Live Site
+
+[Try it here](https://ai-proposal-generator-0rue.onrender.com)
+
+It's on a free plan, so if nobody has used it for a while, the first load can take about a minute.
+
+After the challenge, I kept improving the app and got it ready to go live. You can read about every change, and why I made it, in [IMPROVEMENTS.md](IMPROVEMENTS.md).
+
 ## What It Does
 
 The application allows a user to:
@@ -15,6 +23,7 @@ The application allows a user to:
 - Upload a company logo
 - Preview the logo on the proposal
 - Print or save the finished proposal as a PDF
+- Keep their notes and proposal if the page is refreshed
 
 ## How It Works
 
@@ -45,9 +54,11 @@ The frontend communicates with the backend using `fetch()`. The backend handles 
 - JavaScript
 - Node.js
 - Express
-- Claude API
+- Claude API (Claude Haiku 5.5)
+- Helmet and express-rate-limit (security)
 - Git
 - GitHub
+- Render (hosting)
 
 ## Key Features
 
@@ -79,6 +90,40 @@ The Claude API key is stored on the backend using environment variables.
 
 The API key is not included in the frontend JavaScript or committed to GitHub.
 
+Because the app is live and every proposal costs money, I also added:
+
+- A limit of 10 proposals per visitor per hour
+- A daily limit for the whole site
+- Checks on what users type in, including a maximum length
+- Security headers that add extra browser protections
+- Only the files in the `public` folder can be opened from the browser, so files like `server.js` and `.env` stay private
+
+## Run It Locally
+
+You need [Node.js](https://nodejs.org/) installed and your own [Anthropic API key](https://console.anthropic.com/).
+
+Run these commands in your terminal:
+
+```bash
+git clone https://github.com/MoosaZDigital/ai-proposal-generator.git
+cd ai-proposal-generator
+npm install
+```
+
+Create a file called `.env` in the project folder with this line, using your own key:
+
+```
+ANTHROPIC_API_KEY=your-key-here
+```
+
+Then start the server:
+
+```bash
+npm start
+```
+
+And open `http://localhost:3000` in your browser.
+
 ## What I Learned
 
 This project helped me move beyond basic HTML and CSS and start working with a complete application.
@@ -99,6 +144,15 @@ I learned how to:
 - Test an application from beginning to end
 - Use Git and GitHub to track and publish my work
 
+After the challenge, I also learned how to:
+
+- Protect a live app from misuse and unexpected costs
+- Test two AI models side by side and choose one based on the results
+- Show loading and error messages so the user always knows what's happening
+- Save work in the browser with `localStorage`
+- Deploy an app with its own server to Render
+- Use branches and pull requests
+
 ## Challenges
 
 One of the biggest challenges was understanding how the different parts of the application connect together.
@@ -109,9 +163,9 @@ I also learned that testing each feature individually is not enough. The complet
 
 ## Current Version
 
-This is an MVP (Minimum Viable Product) created for a bootcamp challenge.
+This started as an MVP (Minimum Viable Product) for a bootcamp challenge. The main goal was to demonstrate a working end-to-end proposal generation workflow rather than build a complete commercial application.
 
-The main goal was to demonstrate a working end-to-end proposal generation workflow rather than build a complete commercial application.
+Since then, I've made it safer, more reliable and easier to use, and deployed it so anyone can try it. See [IMPROVEMENTS.md](IMPROVEMENTS.md) for the details.
 
 ## Future Improvements
 
@@ -127,11 +181,4 @@ Possible future improvements include:
 
 ## Walkthrough
 
-[Watch the walkthrough](https://www.loom.com/share/0807e1a0b92347d6a1fb1359decced0a)
-
-## Live Demo
-
-Frontend hosted on GitHub Pages.
-
-AI generation currently requires the Node.js backend to be running locally.
-See walkthrough video for full functionality.
+[Watch the walkthrough](https://www.loom.com/share/0807e1a0b92347d6a1fb1359decced0a) (recorded for the original challenge version)
